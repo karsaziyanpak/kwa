@@ -2,6 +2,11 @@
 session_start();
 require_once('/home/noorgeec/kwa.env.php');
 
+/**
+ * KWA Git Deployment Console
+ * Securely pulls the latest changes from GitHub to the live server.
+ */
+
 // 1. Security & Session Management
 if (isset($_GET['logout'])) {
     session_destroy();
@@ -15,6 +20,11 @@ if (isset($_POST['password'])) {
     } else {
         $error = "Access Denied. Incorrect Password.";
     }
+}
+
+// Support for direct key access via GET (as requested in some deployment scenarios)
+if (isset($_GET['key']) && $_GET['key'] === DEPLOY_KEY) {
+    $_SESSION['kwa_auth'] = true;
 }
 
 if (!isset($_SESSION['kwa_auth']) || $_SESSION['kwa_auth'] !== true) {
