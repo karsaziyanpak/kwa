@@ -4,11 +4,18 @@
  * Receives JSON data from the contact form and saves it to a JSON file
  */
 
-// Set headers
-header('Content-Type: application/json');
+// Clean output buffer to prevent any unwanted output before JSON
+ob_clean();
+
+// Set headers FIRST before any output
+header('Content-Type: application/json; charset=UTF-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
+
+// Disable error display to prevent output before JSON
+ini_set('display_errors', 0);
+error_reporting(E_ALL);
 
 // Handle preflight requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -121,32 +128,23 @@ if (file_put_contents($jsonFile, json_encode($messages, JSON_PRETTY_PRINT | JSON
     exit;
 }
 
-// Optional: Send email notification to admin
-$adminEmail = 'info@kwa.com.pk'; // Change this to the actual admin email
+// Optional: Send email notification to admin (non-blocking)
+$adminEmail = 'info@kwa.com.pk';
 $subject_email = 'New Contact Form Submission from KWA Website - ' . ucfirst($category);
-$emailBody = "
-A new message has been received from the KWA website contact form.
-
-Name: {$name}
-Email: {$email}
-Phone: " . ($phone ? $phone : 'Not provided') . "
-Category: " . ucfirst($category) . "
-Subject: " . ($subject ? $subject : 'Not provided') . "
-Timestamp: {$timestamp}
-
-Message:
-{$message}
-
----
-This is an automated message from the KWA website contact form.
-To reply to this message, use the Admin Panel at: admin.php
-";
+$emailBody = "A new message has been received from the KWA website contact form.\n\n";
+$emailBody .= "Name: {$name}\n";
+$emailBody .= "Email: {$email}\n";
+$emailBody .= "Phone: " . ($phone ? $phone : 'Not provided') . "\n";
+$emailBody .= "Category: " . ucfirst($category) . "\n";
+$emailBody .= "Subject: " . ($subject ? $subject : 'Not provided') . "\n";
+$emailBody .= "Timestamp: {$timestamp}\n\n";
+$emailBody .= "Message:\n{$message}\n\n";
+$emailBody .= "---\nThis is an automated message from the KWA website contact form.\nTo reply to this message, use the Admin Panel at: admin.php\n";
 
 $headers = "From: noreply@kwa.com.pk\r\n";
 $headers .= "Reply-To: {$email}\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-// Attempt to send email (non-blocking)
 @mail($adminEmail, $subject_email, $emailBody, $headers);
 
 // Return success response

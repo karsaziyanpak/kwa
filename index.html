@@ -25,18 +25,39 @@
         <div class="header-container">
             <div class="logo">
                 <img src="images/KWA_logo_final_--removebg-preview.png" alt="KWA Logo">
-                <span>KWA</span>
+                <div class="logo-text">
+                    <span class="org-name">Karsazian Welfare</span>
+                    <span class="org-tagline">Association</span>
+                </div>
             </div>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-            <nav id="mainNav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#activities">Activities</a>
-                <a href="#impact">Impact</a>
-                <a href="#donate">Donate</a>
-                <a href="#contact">Contact</a>
-                <a class="btn btn-primary nav-donate" href="#donate">Donate Now</a>
-            </nav>
+
+            <div class="header-info">
+                <div class="header-info-item">
+                    <span class="header-info-label">Email</span>
+                    <span class="header-info-value"><a href="mailto:info@kwa.com.pk">info@kwa.com.pk</a></span>
+                </div>
+                <div class="header-info-item">
+                    <span class="header-info-label">Phone</span>
+                    <span class="header-info-value"><a href="tel:021-32625005">021-32625005</a></span>
+                </div>
+                <div class="header-info-item">
+                    <span class="header-info-label">Donate Account</span>
+                    <span class="header-info-value">0111-0100077207</span>
+                </div>
+            </div>
+
+            <div>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <nav id="mainNav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#activities">Activities</a>
+                    <a href="#impact">Impact</a>
+                    <a href="#donate">Donate</a>
+                    <a href="#contact">Contact</a>
+                    <a class="btn btn-primary nav-donate" href="#donate">Donate Now</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -61,13 +82,10 @@
         <div class="container">
             <h2>About Us</h2>
             <div class="about-content">
-                <p>Karsazian Welfare Association is a charitable and non-profit organization founded by the students of Karsazian School in Karachi. Our mission is to build an educated and healthy Pakistan by providing sustainable support to underserved communities.</p>
+                <p><strong>Karsazian Welfare Association</strong> is a charitable and non-profit organization founded by the students of Karsazian School in Karachi. Our mission is to build an educated and healthy Pakistan by providing sustainable support to underserved communities.</p>
                 
                 <h3>Our Mission</h3>
                 <p>We are dedicated to improving education and healthcare in rural areas through sustainable initiatives. Initially providing medical assistance, assistance in natural calamities, medical camps, and assistance in educational matters, we have expanded our reach to serve over 500 families across 12 rural projects.</p>
-                
-                <h3>Why We Exist</h3>
-                <p>Your generous contributions are crucial to the success of Karsazian Welfare Association. Our mission is to build an educated and healthy Pakistan. We achieve this by providing medical assistance, aiding during natural calamities, conducting medical camps, and supporting educational initiatives. Every donation, regardless of its size, directly empowers us to fulfill our mission and create a positive impact on the lives of those in need.</p>
                 
                 <div class="about-info">
                     <div class="info-box">
@@ -75,12 +93,8 @@
                         <p>DSW-4346-K</p>
                     </div>
                     <div class="info-box">
-                        <h4>Email</h4>
-                        <p><a href="mailto:info@kwa.com.pk">info@kwa.com.pk</a></p>
-                    </div>
-                    <div class="info-box">
-                        <h4>Phone</h4>
-                        <p><a href="tel:021-32625005">021-32625005</a></p>
+                        <h4>Our Commitment</h4>
+                        <p>100% Donation Transparency & Accountability</p>
                     </div>
                 </div>
             </div>
@@ -93,7 +107,7 @@
     <section id="activities">
         <div class="container">
             <h2>Our Activities</h2>
-            <p class="section-intro">We organize various campaigns focused on improving education and healthcare in rural areas. These include:</p>
+            <p class="section-intro">We organize various campaigns focused on improving education and healthcare in rural areas.</p>
             
             <div class="activities-list">
                 <div class="activity-item">
@@ -122,6 +136,7 @@
                 </div>
             </div>
 
+            <h3 style="text-align: center; margin-top: 2rem; margin-bottom: 1.5rem;">Photo Gallery</h3>
             <div class="slider-container">
                 <div class="slider" id="imageSlider">
                     <img alt="Activity Image 1" class="slide" src="images/KWA-Activ-01.jpg" />
@@ -144,7 +159,7 @@
          ============================================ -->
     <section id="impact">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Our Impact</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem;">Our Impact</h2>
             <div class="impact-grid">
                 <div class="impact-card">
                     <h3>500+</h3>
@@ -264,16 +279,45 @@
          FOOTER
          ============================================ -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Karsazian Welfare Association. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="privacy/index.html">Privacy Policy</a> | 
-                    <a href="sitemap.xml">Sitemap</a> | 
-                    <a href="deploy.php" target="_blank">Deploy Console</a> | 
-                    <a href="admin.php" target="_blank">Admin Panel</a>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/karsaziyan" target="_blank" title="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                    <a href="http://x.com/karsaziyan92" target="_blank" title="Twitter/X">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.868 6.75h-3.308l7.73-8.835L2.56 2.25h6.772l4.683 6.18 5.49-6.18zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
                 </div>
             </div>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="privacy/index.html">Privacy Policy</a></li>
+                    <li><a href="deploy.php" target="_blank">Deploy Console</a></li>
+                    <li><a href="admin.php" target="_blank">Admin Panel</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Support Our Mission</h4>
+                <p class="footer-text">Your generous donation helps us serve 500+ families across 12 rural projects. Every contribution, no matter the size, creates lasting impact.</p>
+                <p class="footer-text"><strong>Account:</strong> 0111-0100077207</p>
+                <p class="footer-credit">Designed & Developed by <a href="https://noorgeec.com" target="_blank">NoorGee</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Karsazian Welfare Association. All rights reserved.</p>
         </div>
     </footer>
 
@@ -300,7 +344,7 @@
         // Image Slider for Activities
         const slider = document.getElementById('imageSlider');
         let currentSlide = 0;
-        const slideWidth = 500;
+        const slideWidth = 600;
 
         function nextSlide() {
             currentSlide++;
@@ -310,14 +354,14 @@
             slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
         }
 
-        let autoSlide = setInterval(nextSlide, 3000);
+        let autoSlide = setInterval(nextSlide, 4000);
 
         slider.addEventListener('mouseenter', () => {
             clearInterval(autoSlide);
         });
 
         slider.addEventListener('mouseleave', () => {
-            autoSlide = setInterval(nextSlide, 3000);
+            autoSlide = setInterval(nextSlide, 4000);
         });
 
         // Copy to Clipboard Function
@@ -364,13 +408,22 @@
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(result => {
                 if (result.success) {
                     formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
                     formMessage.classList.remove('error');
                     formMessage.classList.add('success');
                     contactForm.reset();
+                    // Auto-hide message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.classList.remove('success');
+                    }, 5000);
                 } else {
                     throw new Error(result.message || 'An error occurred');
                 }
