@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- HEADER (Compact & Full Info) -->
     <header class="header">
         <div class="header-top">
             <div class="contact-bar">
                 <span>📧 info@kwa.com.pk</span>
                 <span>📞 021-32625005</span>
-                <span>🏦 Acc: 0111-0100077207</span>
+                <span>🏦 Meezan Acc: 0111-0100077207</span>
             </div>
         </div>
 
@@ -26,6 +26,7 @@
                 <h1 class="org-name">Karsazian Welfare Association</h1>
             </div>
 
+            <!-- REORDERED NAVIGATION -->
             <nav class="navbar" aria-label="Main navigation">
                 <a href="#home">Home</a>
                 <a href="#activities">Activities</a>
@@ -39,8 +40,9 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
+        <!-- HERO SECTION (With Image) -->
         <section id="home" class="hero">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1920" alt="Rural Welfare" class="hero-bg-image">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h2>Empowering Lives in Rural Pakistan</h2>
@@ -52,7 +54,7 @@
             </div>
         </section>
 
-        <!-- ACTIVITIES SECTION -->
+        <!-- ACTIVITIES SECTION (With Slider) -->
         <section id="activities" class="activities">
             <div class="container">
                 <h2>Our Activities</h2>
@@ -85,18 +87,14 @@
                 </div>
 
                 <!-- IMAGE SLIDER -->
-                <div class="slider-container">
-                    <div class="slider" id="imageSlider">
-                        <img src="images/KWA-Activ-01.jpg" alt="Activity 1" class="slide">
-                        <img src="images/KWA-Activ-02.jpg" alt="Activity 2" class="slide">
-                        <img src="images/KWA-Activ-03.jpg" alt="Activity 3" class="slide">
-                        <img src="images/KWA-Activ-04.jpg" alt="Activity 4" class="slide">
-                        <img src="images/KWA-Activ-05.jpg" alt="Activity 5" class="slide">
-                        <img src="images/KWA-Activ-06.jpg" alt="Activity 6" class="slide">
-                        <img src="images/KWA-Activ-07.jpg" alt="Activity 7" class="slide">
-                        <img src="images/KWA-Activ-08.jpg" alt="Activity 8" class="slide">
-                        <img src="images/KWA-Activ-09.jpg" alt="Activity 9" class="slide">
-                        <img src="images/KWA-Activ-10.jpg" alt="Activity 10" class="slide">
+                <div class="slider-wrapper">
+                    <div class="slider-container" id="sliderContainer">
+                        <div class="slider" id="imageSlider">
+                            <img src="images/KWA-Activ-01.jpg" alt="Activity 1" class="slide" onerror="this.src='https://via.placeholder.com/800x400?text=Activity+1'">
+                            <img src="images/KWA-Activ-02.jpg" alt="Activity 2" class="slide" onerror="this.src='https://via.placeholder.com/800x400?text=Activity+2'">
+                            <img src="images/KWA-Activ-03.jpg" alt="Activity 3" class="slide" onerror="this.src='https://via.placeholder.com/800x400?text=Activity+3'">
+                            <img src="images/KWA-Activ-04.jpg" alt="Activity 4" class="slide" onerror="this.src='https://via.placeholder.com/800x400?text=Activity+4'">
+                        </div>
                     </div>
                     <button class="slider-btn prev" id="prevBtn" aria-label="Previous slide">❮</button>
                     <button class="slider-btn next" id="nextBtn" aria-label="Next slide">❯</button>
@@ -148,8 +146,8 @@
             </div>
         </section>
 
-        <!-- DONATION SECTION -->
-        <section id="donate" class="donation">
+        <!-- DONATION SECTION (Fits one screen) -->
+        <section id="donate" class="donation section-fit-screen">
             <div class="container">
                 <h2>Support Our Mission</h2>
                 <div class="bank-details">
@@ -175,28 +173,24 @@
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="contact">
-            <div class="container">
+        <!-- CONTACT SECTION (Fits one screen) -->
+        <section id="contact" class="contact section-fit-screen">
+            <div class="container compact-container">
                 <h2>Get In Touch</h2>
                 <form id="contactForm" class="contact-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Full Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="Email Address" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
                             <input type="tel" id="phone" name="phone" placeholder="Phone Number">
                         </div>
                         <div class="form-group">
-                            <label for="category">Category</label>
                             <select id="category" name="category" required>
                                 <option value="">Select Category</option>
                                 <option value="info">Information</option>
@@ -207,8 +201,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                     <div id="formMessage" class="form-message"></div>
@@ -217,34 +210,38 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (3 Columns) -->
     <footer class="footer">
-        <div class="footer-column">
-            <h2>Follow Us</h2>
-            <div class="social-links">
-                <a href="https://www.facebook.com/karsaziyan" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="http://x.com/karsaziyan92" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+        <div class="container footer-grid">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/karsaziyan" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="http://x.com/karsaziyan92" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+                </div>
             </div>
-        </div>
 
-        <div class="footer-column">
-            <h2>Quick Links</h2>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#donate">Donate</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h2>General Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-column">
-            <h2>Support Our Mission</h2>
-            <p>Your generous donation helps us serve 500+ families across 12 rural projects.</p>
-            <p class="footer-credit">Designed &amp; Developed by <a href="https://noorgeec.com" target="_blank" rel="noopener noreferrer">NoorGee</a></p>
-            <p class="footer-copy">&copy; 2026 Karsazian Welfare Association. All rights reserved.</p>
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h2>Support Our Mission</h2>
+                <p>Your generous donation helps us serve 500+ families across 12 rural projects.</p>
+                <p class="footer-credit">&copy; 2026 Copyright to <a href="https://noorgeec.com" target="_blank" rel="noopener noreferrer">NoorGee</a></p>
+            </div>
         </div>
     </footer>
 
