@@ -3,441 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Karsazian Welfare Association - Empowering Lives in Rural Pakistan through education, health, and clean water initiatives.">
-    <meta name="keywords" content="NGO, Pakistan, welfare, education, health, clean water, rural development">
-    <meta name="author" content="Karsazian Welfare Association">
-    <title>Karsazian Welfare Association - KWA | Empowering Rural Pakistan</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/KWA_logo_final_--removebg-preview.png">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Kwa</title>
 </head>
 <body>
-    <!-- ============================================
-         HEADER & NAVIGATION
-         ============================================ -->
-    <header>
-        <div class="header-top">
-            <div class="header-container">
-                <div class="header-info">
-                    <div class="header-info-item">
-                        <span class="header-info-label">Email:</span>
-                        <span class="header-info-value"><a href="mailto:info@kwa.com.pk">info@kwa.com.pk</a></span>
-                    </div>
-                    <div class="header-info-item">
-                        <span class="header-info-label">Phone:</span>
-                        <span class="header-info-value"><a href="tel:021-32625005">021-32625005</a></span>
-                    </div>
-                    <div class="header-info-item">
-                        <span class="header-info-label">Donation Account:</span>
-                        <span class="header-info-value">0111-0100077207</span>
-                    </div>
-                </div>
-            </div>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+        <div style="display: flex; align-items: center;">
+            <img src="logo.png" alt="Logo" style="height: 50px;">
+            <h1 style="margin-left: 10px;">Organization Name</h1>
         </div>
-        <div class="header-main">
-            <div class="header-container">
-                <div class="logo">
-                    <img src="images/KWA_logo_final_--removebg-preview.png" alt="KWA Logo">
-                    <div class="logo-text">
-                        <span class="org-name">Karsazian Welfare Association</span>
-                    </div>
-                </div>
-
-                <div class="nav-wrapper">
-                    <button class="menu-toggle" id="menuToggle">☰</button>
-                    <nav id="mainNav">
-                        <a href="#home">Home</a>
-                        <a href="#activities">Activities</a>
-                        <a href="#impact">Impact</a>
-                        <a href="#about">About</a>
-                        <a href="#donate">Donate</a>
-                        <a href="#contact">Contact</a>
-                        <a class="btn btn-primary nav-donate" href="#donate">Donate Now</a>
-                    </nav>
-                </div>
-            </div>
+        <div class="contact-info" style="text-align: right;">
+            <p>Email: contact@example.com</p>
+            <p>Phone: (123) 456-7890</p>
         </div>
     </header>
-
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-    <section id="home" class="hero full-screen">
-        <div class="hero-content">
-            <h1>Empowering Lives in Rural Pakistan</h1>
-            <p>Karsazian Welfare Association is dedicated to providing education, health, and clean water to underserved communities.</p>
-            <div class="hero-buttons">
-                <a href="#donate" class="btn btn-primary btn-large">Support Our Cause</a>
-                <a href="#activities" class="btn btn-secondary btn-large">View Our Work</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         ACTIVITIES SECTION
-         ============================================ -->
-    <section id="activities" class="full-screen">
-        <div class="container">
+    <nav>
+        <ul style="display: flex; list-style-type: none; padding: 0; margin: 0;">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home" style="min-height: 100vh;">
+            <h2>Welcome to Kwa</h2>
+            <p>Your content goes here.</p>
+        </section>
+        <section id="activities" style="min-height: 100vh;">
             <h2>Our Activities</h2>
-            <p class="section-intro">We organize various campaigns focused on improving education and healthcare in rural areas.</p>
-            
-            <div class="activities-list">
-                <div class="activity-item">
-                    <h4>Health Awareness</h4>
-                    <p>Conducting awareness campaigns on health and hygiene in rural communities.</p>
-                </div>
-                <div class="activity-item">
-                    <h4>School Campaigns</h4>
-                    <p>Supporting educational initiatives and school development programs.</p>
-                </div>
-                <div class="activity-item">
-                    <h4>Supplies Donation</h4>
-                    <p>Providing educational and medical supplies to underserved areas.</p>
-                </div>
-                <div class="activity-item">
-                    <h4>Healthcare Clinics</h4>
-                    <p>Organizing medical camps and healthcare clinics in rural regions.</p>
-                </div>
-                <div class="activity-item">
-                    <h4>Workshops</h4>
-                    <p>Conducting workshops for teachers and health workers to improve service quality.</p>
-                </div>
-                <div class="activity-item">
-                    <h4>Water & Sanitation</h4>
-                    <p>Implementing clean water and sanitation projects in rural communities.</p>
-                </div>
-            </div>
-
-            <div class="slider-container">
-                <div class="slider" id="imageSlider">
-                    <img alt="Activity Image 1" class="slide" src="images/KWA-Activ-01.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 2" class="slide" src="images/KWA-Activ-02.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 3" class="slide" src="images/KWA-Activ-03.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 4" class="slide" src="images/KWA-Activ-04.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 5" class="slide" src="images/KWA-Activ-05.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 6" class="slide" src="images/KWA-Activ-06.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 7" class="slide" src="images/KWA-Activ-07.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 8" class="slide" src="images/KWA-Activ-08.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 9" class="slide" src="images/KWA-Activ-09.jpg" onerror="this.src='images/hero-new.jpg'" />
-                    <img alt="Activity Image 10" class="slide" src="images/KWA-Activ-10.jpg" onerror="this.src='images/hero-new.jpg'" />
-                </div>
-                <button class="slider-btn prev" id="prevBtn">&#10094;</button>
-                <button class="slider-btn next" id="nextBtn">&#10095;</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         IMPACT STATISTICS SECTION
-         ============================================ -->
-    <section id="impact" class="full-screen">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Our Impact</h2>
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <h3>500+</h3>
-                    <p>Families Supported</p>
-                </div>
-                <div class="impact-card">
-                    <h3>12</h3>
-                    <p>Rural Projects</p>
-                </div>
-                <div class="impact-card">
-                    <h3>100%</h3>
-                    <p>Donation Transparency</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         ABOUT SECTION
-         ============================================ -->
-    <section id="about" class="full-screen">
-        <div class="container">
+            <p>Your content goes here.</p>
+        </section>
+        <section id="impact" style="min-height: 100vh;">
+            <h2>Our Impact</h2>
+            <p>Your content goes here.</p>
+        </section>
+        <section id="about" style="min-height: 100vh;">
             <h2>About Us</h2>
-            <div class="about-content">
-                <p><strong>Karsazian Welfare Association</strong> is a charitable and non-profit organization founded by the students of Karsazian School in Karachi. Our mission is to build an educated and healthy Pakistan by providing sustainable support to underserved communities.</p>
-                
-                <h3>Our Mission</h3>
-                <p>We are dedicated to improving education and healthcare in rural areas through sustainable initiatives. Initially providing medical assistance, assistance in natural calamities, medical camps, and assistance in educational matters, we have expanded our reach to serve over 500 families across 12 rural projects.</p>
-                
-                <div class="about-info">
-                    <div class="info-box">
-                        <h4>Registration Number</h4>
-                        <p>DSW-4346-K</p>
-                    </div>
-                    <div class="info-box">
-                        <h4>Our Commitment</h4>
-                        <p>100% Donation Transparency & Accountability</p>
-                    </div>
-                </div>
-            </div>
+            <p>Your content goes here.</p>
+        </section>
+        <section id="donate" style="min-height: 100vh;">
+            <h2>Donate</h2>
+            <p>Your content goes here.</p>
+        </section>
+        <section id="contact" style="min-height: 100vh;">
+            <h2>Contact Us</h2>
+            <p>Your content goes here.</p>
+        </section>
+    </main>
+    <footer style="display: flex; justify-content: space-between; padding: 20px;">
+        <div class="social-media" style="flex: 1;">
+            <h3>Follow Us</h3>
+            <p>Social Media Links</p>
         </div>
-    </section>
-
-    <!-- ============================================
-         DONATION & BANK DETAILS SECTION
-         ============================================ -->
-    <section id="donate" class="full-screen">
-        <div class="donate-container">
-            <h2>Support Our Mission</h2>
-            <div class="bank-details">
-                <h3>Meezan Bank Account Details</h3>
-                
-                <div class="bank-detail-item">
-                    <div class="bank-detail-label">Account Title</div>
-                    <div class="bank-detail-value" onclick="copyToClipboard(this, 'Karsazian Welfare Association')">
-                        Karsazian Welfare Association
-                    </div>
-                    <button class="copy-btn" onclick="copyToClipboard(this, 'Karsazian Welfare Association')">Copy</button>
-                </div>
-
-                <div class="bank-detail-item">
-                    <div class="bank-detail-label">Account Number</div>
-                    <div class="bank-detail-value" onclick="copyToClipboard(this, '0111-0100077207')">
-                        0111-0100077207
-                    </div>
-                    <button class="copy-btn" onclick="copyToClipboard(this, '0111-0100077207')">Copy</button>
-                </div>
-
-                <div class="bank-detail-item">
-                    <div class="bank-detail-label">Bank Name</div>
-                    <div class="bank-detail-value">Meezan Bank Limited</div>
-                </div>
-
-                <div class="bank-detail-item">
-                    <div class="bank-detail-label">Branch Code</div>
-                    <div class="bank-detail-value" onclick="copyToClipboard(this, '9999')">
-                        9999
-                    </div>
-                    <button class="copy-btn" onclick="copyToClipboard(this, '9999')">Copy</button>
-                </div>
-
-                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9; text-align: center;">
-                    Your contribution directly supports education, healthcare, and clean water initiatives. Every donation makes a difference.
-                </p>
-            </div>
+        <div class="quick-links" style="flex: 1;">
+            <h3>Quick Links</h3>
+            <p>Link 1</p>
+            <p>Link 2</p>
         </div>
-    </section>
-
-    <!-- ============================================
-         CONTACT SECTION
-         ============================================ -->
-    <section id="contact" class="full-screen">
-        <div class="contact-container">
-            <h2>Get In Touch</h2>
-            <form id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Your phone number">
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category *</label>
-                        <select id="category" name="category" required>
-                            <option value="">-- Select --</option>
-                            <option value="info">Information</option>
-                            <option value="donation">Donation</option>
-                            <option value="volunteer">Volunteer</option>
-                            <option value="general">General</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-                </div>
-
-                <div class="form-submit">
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </div>
-
-                <div id="formMessage" class="form-message"></div>
-            </form>
-        </div>
-    </section>
-
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/karsaziyan" target="_blank" title="Facebook">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" title="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                    </a>
-                    <a href="http://x.com/karsaziyan92" target="_blank" title="Twitter/X">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.868 6.75h-3.308l7.73-8.835L2.56 2.25h6.772l4.683 6.18 5.49-6.18zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#impact">Impact</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#donate">Donate</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Support Our Mission</h4>
-                <p class="footer-text">Your generous donation helps us serve 500+ families across 12 rural projects.</p>
-                <p class="footer-credit">Designed & Developed by <a href="https://noorgeec.com" target="_blank">NoorGee</a></p>
-                <p class="footer-copy">&copy; 2026 Karsazian Welfare Association.</p>
-            </div>
+        <div class="copyright" style="flex: 1; text-align: right;">
+            <h3>&copy; 2026 Organization Name</h3>
+            <p>Your donation helps us!</p>
         </div>
     </footer>
-
-    <!-- ============================================
-         SCRIPTS
-         ============================================ -->
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-
-        menuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mainNav.classList.remove('active');
-            });
-        });
-
-        // Image Slider for Activities
-        const slider = document.getElementById('imageSlider');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentSlide = 0;
-        const totalSlides = 10;
-
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        }
-
-        nextBtn.addEventListener('click', () => {
-            clearInterval(autoSlide);
-            nextSlide();
-            autoSlide = setInterval(nextSlide, 5000);
-        });
-
-        prevBtn.addEventListener('click', () => {
-            clearInterval(autoSlide);
-            prevSlide();
-            autoSlide = setInterval(nextSlide, 5000);
-        });
-
-        let autoSlide = setInterval(nextSlide, 5000);
-
-        slider.addEventListener('mouseenter', () => {
-            clearInterval(autoSlide);
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            autoSlide = setInterval(nextSlide, 5000);
-        });
-
-        // Copy to Clipboard Function
-        function copyToClipboard(element, text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = element.nextElementSibling;
-                if (btn && btn.classList.contains('copy-btn')) {
-                    const originalText = btn.textContent;
-                    btn.textContent = '✓ Copied!';
-                    btn.classList.add('copied');
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.classList.remove('copied');
-                    }, 2000);
-                }
-            }).catch(() => {
-                alert('Failed to copy. Please try again.');
-            });
-        }
-
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                category: formData.get('category'),
-                message: formData.get('message'),
-                timestamp: new Date().toISOString()
-            };
-
-            fetch('save_message.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                if (result.success) {
-                    formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                    formMessage.className = 'form-message success';
-                    contactForm.reset();
-                    setTimeout(() => { formMessage.textContent = ''; }, 5000);
-                } else {
-                    throw new Error(result.message || 'An error occurred');
-                }
-            })
-            .catch(error => {
-                formMessage.textContent = 'Error: ' + error.message;
-                formMessage.className = 'form-message error';
-            });
-        });
-    </script>
 </body>
 </html>
