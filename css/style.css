@@ -1,47 +1,34 @@
 /* ============================================
-   KWA - Karsazian Welfare Association
-   Modern One-Page Emerald Theme
-   ============================================ */
-
-/* ============================================
-   1. GLOBAL RESETS & VARIABLES
+   1. ROOT VARIABLES & GLOBAL STYLES
    ============================================ */
 
 :root {
-  /* Theme Colors */
   --color-emerald: #1b4332;
-  --color-emerald-light: #2d6a4f;
   --color-emerald-lighter: #52b788;
   --color-gold: #d4af37;
-  --color-gold-dark: #b8860b;
-  --color-ivory: #fcfaf1;
+  --color-gold-dark: #aa8c2c;
+  --color-ivory: #faf9f6;
   --color-charcoal: #2d3436;
   --color-gray-light: #f5f5f5;
-  --color-gray-medium: #e0e0e0;
+  --color-gray-medium: #d4d4d4;
   --color-gray-dark: #666666;
-  
-  /* Typography */
-  --font-primary: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'Courier New', monospace;
-  
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
-  
-  /* Border Radius */
-  --radius-sm: 0.375rem;
+
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  
-  /* Transitions */
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 300ms ease-in-out;
-  --transition-slow: 500ms ease-in-out;
+  --radius-lg: 1rem;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
 }
 
 * {
@@ -56,10 +43,9 @@ html {
 
 body {
   font-family: var(--font-primary);
+  line-height: 1.6;
   color: var(--color-charcoal);
   background-color: var(--color-ivory);
-  line-height: 1.6;
-  font-size: 1rem;
 }
 
 /* ============================================
@@ -67,39 +53,37 @@ body {
    ============================================ */
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
-  color: var(--color-emerald);
 }
 
 h1 {
   font-size: 3rem;
+  color: var(--color-emerald);
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
+  color: var(--color-emerald);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
 }
 
 h3 {
-  font-size: 1.875rem;
+  font-size: 1.75rem;
+  color: var(--color-emerald);
 }
 
 h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
   font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
+  color: var(--color-charcoal);
 }
 
 p {
   margin-bottom: var(--spacing-md);
-  color: var(--color-gray-dark);
+  line-height: 1.7;
 }
 
 a {
@@ -109,11 +93,55 @@ a {
 }
 
 a:hover {
-  color: var(--color-emerald-light);
+  color: var(--color-gold);
 }
 
 /* ============================================
-   3. CONTAINER & LAYOUT
+   3. BUTTONS
+   ============================================ */
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-emerald);
+  color: var(--color-ivory);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-emerald-lighter);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-emerald);
+  border: 2px solid var(--color-emerald);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-emerald);
+  color: var(--color-ivory);
+}
+
+.btn-large {
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   4. CONTAINER & LAYOUT
    ============================================ */
 
 .container {
@@ -122,86 +150,13 @@ a:hover {
   padding: 0 var(--spacing-md);
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 calc(-1 * var(--spacing-md));
-}
-
-.col {
-  flex: 1;
-  padding: 0 var(--spacing-md);
-  min-width: 250px;
-}
-
-.col-1 { flex: 0 0 8.333%; }
-.col-2 { flex: 0 0 16.666%; }
-.col-3 { flex: 0 0 25%; }
-.col-4 { flex: 0 0 33.333%; }
-.col-6 { flex: 0 0 50%; }
-.col-12 { flex: 0 0 100%; }
-
-/* ============================================
-   4. BUTTONS
-   ============================================ */
-
-.btn {
-  display: inline-block;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
+.menu-toggle {
+  display: none;
+  background: none;
   border: none;
-  border-radius: var(--radius-lg);
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: all var(--transition-normal);
-  text-decoration: none;
-  font-family: var(--font-primary);
-}
-
-.btn-primary {
-  background-color: var(--color-gold);
   color: var(--color-charcoal);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-gold-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
-}
-
-.btn-secondary {
-  background-color: var(--color-emerald);
-  color: var(--color-ivory);
-  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.3);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-emerald-light);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(27, 67, 50, 0.4);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-emerald);
-  border: 2px solid var(--color-emerald);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-emerald);
-  color: var(--color-ivory);
-}
-
-.btn-small {
-  padding: var(--spacing-xs) var(--spacing-md);
-  font-size: 0.875rem;
-}
-
-.btn-large {
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-size: 1.125rem;
 }
 
 /* ============================================
@@ -214,14 +169,14 @@ header {
   background-color: var(--color-ivory);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-sm) 0;
   border-bottom: 3px solid var(--color-emerald);
 }
 
 .header-container {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
@@ -231,61 +186,62 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  font-size: 1rem;
+  gap: var(--spacing-sm);
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--color-emerald);
 }
 
 .logo img {
-  height: 60px;
+  height: 45px;
   width: auto;
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .logo-text .org-name {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-emerald);
 }
 
 .logo-text .org-tagline {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--color-gold);
   font-weight: 500;
 }
 
 .header-info {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 .header-info-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
 }
 
 .header-info-label {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: var(--color-gray-dark);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   font-weight: 600;
 }
 
 .header-info-value {
   font-weight: 600;
   color: var(--color-emerald);
+  font-size: 0.75rem;
 }
 
 .header-info-value a {
@@ -299,7 +255,7 @@ header {
 
 nav {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   align-items: center;
   justify-self: end;
 }
@@ -308,7 +264,8 @@ nav a {
   font-weight: 500;
   color: var(--color-charcoal);
   transition: color var(--transition-fast);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
 }
 
 nav a:hover {
@@ -316,17 +273,7 @@ nav a:hover {
 }
 
 .nav-donate {
-  margin-left: var(--spacing-sm);
-}
-
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--color-emerald);
+  margin-left: var(--spacing-xs);
 }
 
 /* ============================================
@@ -335,37 +282,33 @@ nav a:hover {
 
 #home {
   position: relative;
-  height: 500px;
-  background: linear-gradient(rgba(27, 67, 50, 0.7), rgba(27, 67, 50, 0.7)), 
-              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="30" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="1200" height="600" fill="%231b4332"/><rect width="1200" height="600" fill="url(%23pattern)"/></svg>');
+  height: 400px;
+  background: linear-gradient(rgba(27, 67, 50, 0.5), rgba(27, 67, 50, 0.5)), 
+              url('../images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   color: var(--color-ivory);
-  overflow: hidden;
+  text-align: center;
 }
 
 .hero-content {
-  max-width: 700px;
-  z-index: 2;
-  animation: fadeInUp 1s ease-out;
+  max-width: 800px;
+  padding: 0 var(--spacing-md);
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
   color: var(--color-ivory);
+  font-size: 2.5rem;
   margin-bottom: var(--spacing-md);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
-  font-size: 1.25rem;
-  color: var(--color-gray-light);
+  color: var(--color-ivory);
+  font-size: 1.2rem;
   margin-bottom: var(--spacing-xl);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -373,17 +316,6 @@ nav a:hover {
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ============================================
@@ -398,37 +330,36 @@ nav a:hover {
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
 
 .impact-card {
-  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-emerald-light) 100%);
+  background: linear-gradient(135deg, var(--color-emerald), var(--color-emerald-lighter));
   color: var(--color-ivory);
   padding: var(--spacing-xl);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   text-align: center;
-  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.2);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  box-shadow: 0 8px 16px rgba(27, 67, 50, 0.2);
+  transition: transform var(--transition-normal);
 }
 
 .impact-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(27, 67, 50, 0.3);
 }
 
 .impact-card h3 {
-  font-size: 2.5rem;
   color: var(--color-gold);
+  font-size: 2.5rem;
   margin-bottom: var(--spacing-sm);
 }
 
 .impact-card p {
   color: var(--color-ivory);
-  font-size: 1.1rem;
   margin: 0;
+  font-size: 1.1rem;
 }
 
 /* ============================================
@@ -438,13 +369,18 @@ nav a:hover {
 #donate {
   background-color: var(--color-emerald);
   color: var(--color-ivory);
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .donate-container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: var(--spacing-lg);
+  width: 100%;
 }
 
 .donate-container h2 {
@@ -455,63 +391,58 @@ nav a:hover {
 
 .bank-details {
   background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid var(--color-gold);
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-xl);
-  text-align: center;
-}
-
-.bank-details h3 {
-  color: var(--color-gold);
-  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .bank-detail-item {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  position: relative;
 }
 
 .bank-detail-label {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  color: var(--color-gold);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 600;
   margin-bottom: var(--spacing-xs);
 }
 
 .bank-detail-value {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--color-gold);
-  font-family: var(--font-mono);
+  color: var(--color-ivory);
   word-break: break-all;
-  padding: var(--spacing-md);
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius-md);
   cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
   transition: background-color var(--transition-fast);
 }
 
 .bank-detail-value:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .copy-btn {
-  display: inline-block;
-  margin-top: var(--spacing-sm);
-  padding: var(--spacing-xs) var(--spacing-md);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: var(--color-gold);
   color: var(--color-charcoal);
   border: none;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   cursor: pointer;
+  font-size: 0.8rem;
   font-weight: 600;
-  font-size: 0.875rem;
   transition: all var(--transition-fast);
 }
 
 .copy-btn:hover {
   background-color: var(--color-gold-dark);
-  transform: scale(1.05);
 }
 
 .copy-btn.copied {
@@ -524,7 +455,7 @@ nav a:hover {
 
 #about {
   background-color: var(--color-ivory);
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
 }
 
 .about-content {
@@ -572,7 +503,11 @@ nav a:hover {
 
 #activities {
   background-color: var(--color-gray-light);
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-intro {
@@ -615,24 +550,25 @@ nav a:hover {
 
 .slider-container {
   width: 100%;
-  max-width: 600px;
-  height: 350px;
+  max-width: 100%;
+  height: 300px;
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  margin: var(--spacing-lg) auto 0;
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .slider {
   display: flex;
-  width: 6000px;
+  width: 100%;
   transition: transform 0.5s ease-in-out;
+  height: 100%;
 }
 
 .slide {
-  min-width: 600px;
-  height: 350px;
+  min-width: 100%;
+  height: 300px;
   flex-shrink: 0;
   object-fit: cover;
 }
@@ -643,13 +579,18 @@ nav a:hover {
 
 #contact {
   background-color: var(--color-gray-light);
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: var(--spacing-lg);
+  width: 100%;
 }
 
 .contact-container h2 {
@@ -658,25 +599,26 @@ nav a:hover {
 }
 
 .form-group {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .form-group label {
   display: block;
   margin-bottom: var(--spacing-xs);
   font-weight: 600;
-  color: var(--color-emerald);
+  color: var(--color-charcoal);
+  font-size: 0.9rem;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   border: 2px solid var(--color-gray-medium);
   border-radius: var(--radius-md);
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: border-color var(--transition-fast);
   background-color: var(--color-ivory);
   color: var(--color-charcoal);
@@ -702,11 +644,11 @@ nav a:hover {
 
 .form-group textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 120px;
 }
 
 .form-submit {
-  width: 100%;
+  margin-top: var(--spacing-md);
   text-align: center;
 }
 
@@ -715,13 +657,15 @@ nav a:hover {
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   display: none;
+  font-size: 0.9rem;
 }
 
 .form-message.success {
   background-color: #d4edda;
   color: #155724;
+  border: 1px solid #c3e6cb;
   display: block;
 }
 
@@ -930,7 +874,7 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .hero-content p {
@@ -941,7 +885,7 @@ footer {
     flex-direction: column;
   }
 
-  .hero-buttons .btn {
+  .btn {
     width: 100%;
   }
 
@@ -949,48 +893,12 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .col-6 {
-    flex: 0 0 100%;
+  .bank-detail-item {
+    margin-bottom: var(--spacing-md);
   }
 
-  .row {
-    margin: 0;
-  }
-
-  .col {
-    padding: 0;
-    margin-bottom: var(--spacing-lg);
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    padding: var(--spacing-xs) var(--spacing-md);
-    font-size: 0.875rem;
-  }
-
-  .impact-card h3 {
-    font-size: 2rem;
-  }
-
-  .bank-detail-value {
-    font-size: 1.125rem;
+  .contact-container {
+    max-width: 100%;
   }
 
   .activities-list {
@@ -1027,100 +935,18 @@ footer {
   text-align: center;
 }
 
-.text-left {
-  text-align: left;
+.mt-1 {
+  margin-top: var(--spacing-md);
 }
 
-.text-right {
-  text-align: right;
+.mt-2 {
+  margin-top: var(--spacing-xl);
 }
 
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mt-xl { margin-top: var(--spacing-xl); }
-
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mb-xl { margin-bottom: var(--spacing-xl); }
-
-.p-sm { padding: var(--spacing-sm); }
-.p-md { padding: var(--spacing-md); }
-.p-lg { padding: var(--spacing-lg); }
-.p-xl { padding: var(--spacing-xl); }
-
-.flex {
-  display: flex;
+.mb-1 {
+  margin-bottom: var(--spacing-md);
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.gap-sm { gap: var(--spacing-sm); }
-.gap-md { gap: var(--spacing-md); }
-.gap-lg { gap: var(--spacing-lg); }
-
-.hidden {
-  display: none !important;
-}
-
-.visible {
-  display: block !important;
-}
-
-/* ============================================
-   13. ANIMATIONS
-   ============================================ */
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out;
+.mb-2 {
+  margin-bottom: var(--spacing-xl);
 }

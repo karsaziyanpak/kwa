@@ -139,16 +139,16 @@
             <h3 style="text-align: center; margin-top: 2rem; margin-bottom: 1.5rem;">Photo Gallery</h3>
             <div class="slider-container">
                 <div class="slider" id="imageSlider">
-                    <img alt="Activity Image 1" class="slide" src="images/KWA-Activ-01.jpg" />
-                    <img alt="Activity Image 2" class="slide" src="images/KWA-Activ-02.jpg" />
-                    <img alt="Activity Image 3" class="slide" src="images/KWA-Activ-03.jpg" />
-                    <img alt="Activity Image 4" class="slide" src="images/KWA-Activ-04.jpg" />
-                    <img alt="Activity Image 5" class="slide" src="images/KWA-Activ-05.jpg" />
-                    <img alt="Activity Image 6" class="slide" src="images/KWA-Activ-06.jpg" />
-                    <img alt="Activity Image 7" class="slide" src="images/KWA-Activ-07.jpg" />
-                    <img alt="Activity Image 8" class="slide" src="images/KWA-Activ-08.jpg" />
-                    <img alt="Activity Image 9" class="slide" src="images/KWA-Activ-09.jpg" />
-                    <img alt="Activity Image 10" class="slide" src="images/KWA-Activ-10.jpg" />
+                    <img alt="Activity Image 1" class="slide" src="images/KWA-Activ-01.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 2" class="slide" src="images/KWA-Activ-02.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 3" class="slide" src="images/KWA-Activ-03.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 4" class="slide" src="images/KWA-Activ-04.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 5" class="slide" src="images/KWA-Activ-05.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 6" class="slide" src="images/KWA-Activ-06.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 7" class="slide" src="images/KWA-Activ-07.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 8" class="slide" src="images/KWA-Activ-08.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 9" class="slide" src="images/KWA-Activ-09.jpg" onerror="this.src='images/hero-bg.jpg'" />
+                    <img alt="Activity Image 10" class="slide" src="images/KWA-Activ-10.jpg" onerror="this.src='images/hero-bg.jpg'" />
                 </div>
             </div>
         </div>
@@ -344,14 +344,14 @@
         // Image Slider for Activities
         const slider = document.getElementById('imageSlider');
         let currentSlide = 0;
-        const slideWidth = 600;
+        const totalSlides = 10;
 
         function nextSlide() {
             currentSlide++;
-            if (currentSlide >= 10) {
+            if (currentSlide >= totalSlides) {
                 currentSlide = 0;
             }
-            slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
         let autoSlide = setInterval(nextSlide, 4000);
