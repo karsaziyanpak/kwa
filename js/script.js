@@ -1,78 +1,118 @@
-// Mobile Menu Toggle Functionality
-const mobileMenuToggle = () => {
-    const menuButton = document.getElementById('menu-button');
-    const menu = document.getElementById('mobile-menu');
+// ============================================
+// IMAGE SLIDER
+// ============================================
 
-    menuButton.addEventListener('click', () => {
-        menu.classList.toggle('open');
+const slider = document.getElementById('imageSlider');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let currentSlide = 0;
+const totalSlides = 10;
+
+function updateSlider() {
+  if (slider) {
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlider();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlider();
+}
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', () => {
+    clearInterval(autoSlide);
+    nextSlide();
+    autoSlide = setInterval(nextSlide, 5000);
+  });
+}
+
+if (prevBtn) {
+  prevBtn.addEventListener('click', () => {
+    clearInterval(autoSlide);
+    prevSlide();
+    autoSlide = setInterval(nextSlide, 5000);
+  });
+}
+
+let autoSlide = setInterval(nextSlide, 5000);
+
+if (slider) {
+  slider.addEventListener('mouseenter', () => {
+    clearInterval(autoSlide);
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(nextSlide, 5000);
+  });
+}
+
+// ============================================
+// CONTACT FORM SUBMISSION
+// ============================================
+
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      category: formData.get('category'),
+      message: formData.get('message'),
+      timestamp: new Date().toISOString()
+    };
+
+    fetch('save_message.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.success) {
+        formMessage.textContent = '✓ Thank you! Your message has been sent successfully.';
+        formMessage.className = 'form-message success';
+        contactForm.reset();
+        setTimeout(() => {
+          formMessage.textContent = '';
+        }, 5000);
+      } else {
+        throw new Error(result.message || 'An error occurred');
+      }
+    })
+    .catch(error => {
+      formMessage.textContent = '✗ Error: ' + error.message;
+      formMessage.className = 'form-message error';
     });
-};
+  });
+}
 
-// Image Slider for Activities Section
-const imageSlider = () => {
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
+// ============================================
+// SMOOTH SCROLLING FOR NAVIGATION
+// ============================================
 
-    const showSlide = (index) => {
-        slides.forEach((slide, i) => {
-            slide.style.display = (i === index) ? 'block' : 'none';
-        });
-    };
-
-    const nextSlide = () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    };
-
-    const prevSlide = () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    };
-
-    // Auto-play functionality
-    setInterval(nextSlide, 3000);
-
-    // Manual Controls
-    document.getElementById('next-button').addEventListener('click', nextSlide);
-    document.getElementById('prev-button').addEventListener('click', prevSlide);
-
-    showSlide(currentSlide);
-};
-
-// Contact Form Submission
-const contactFormSubmission = () => {
-    const form = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
-    const errorMessage = document.getElementById('error-message');
-
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-
-        // Basic Validation
-        if (!formData.get('name') || !formData.get('email')) {
-            errorMessage.textContent = 'Name and email are required!';
-            return;
-        }
-
-        try {
-            const response = await fetch('save_message.php', {
-                method: 'POST',
-                body: formData,
-            });
-            if (!response.ok) throw new Error('Server responded with a problem.');
-
-            successMessage.textContent = 'Message sent successfully!';
-            form.reset();
-        } catch (error) {
-            errorMessage.textContent = 'Error sending message: ' + error.message;
-        }
-    });
-};
-
-window.onload = () => {
-    mobileMenuToggle();
-    imageSlider();
-    contactFormSubmission();
-};
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
