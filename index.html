@@ -312,51 +312,94 @@
     <!-- FOOTER (3 Columns) -->
     <footer class="footer">
         <div class="footer-container">
-            <!-- Column 1: Social Media -->
-            <div class="footer-column footer-social">
-                <h3>Follow Us</h3>
-                <p class="social-intro">Connect with KWA on social media to stay updated on our latest initiatives.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/karsaziyan" target="_blank" rel="noopener noreferrer" class="social-icon facebook" title="Facebook">
-                        <span class="icon-text">f</span>
-                        <span class="social-label">Facebook</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" title="LinkedIn">
-                        <span class="icon-text">in</span>
-                        <span class="social-label">LinkedIn</span>
-                    </a>
-                    <a href="http://x.com/karsaziyan92" target="_blank" rel="noopener noreferrer" class="social-icon twitter" title="Twitter/X">
-                        <span class="icon-text">X</span>
-                        <span class="social-label">Twitter</span>
-                    </a>
+            <!-- Column 1: General & Legal -->
+            <div class="footer-column">
+                <h3>General</h3>
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)" onclick="openModal('termsModal')">Terms & Contradiction</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('faqModal')">FAQ</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="social-links-mini">
+                    <a href="https://www.facebook.com/karsaziyan" target="_blank" rel="noopener noreferrer" title="Facebook">Facebook</a>
+                    <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+                    <a href="http://x.com/karsaziyan92" target="_blank" rel="noopener noreferrer" title="Twitter/X">Twitter</a>
                 </div>
             </div>
 
-            <!-- Column 2: General Links -->
-            <div class="footer-column footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#impact">Impact</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#donate">Donate</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <!-- Column 2: Partners -->
+            <div class="footer-column">
+                <h3>Partner Sites</h3>
+                <ul class="footer-links">
+                    <li><a href="https://noorgee.pk/Web" target="_blank">noorgee.pk/Web</a></li>
+                    <li><a href="https://it.noorgee.com" target="_blank">it.noorgee.com</a></li>
+                    <li><a href="https://noorgee.com" target="_blank">noorgee.com</a></li>
+                    <li><a href="https://us.noorgee.com" target="_blank">us.noorgee.com</a></li>
+                    <li><a href="https://noorgee.pk" target="_blank">noorgee.pk</a></li>
                 </ul>
+                <div class="footer-donation-appeal">
+                    <p>Your support transforms lives. Help us build a better future.</p>
+                    <a href="#donate" class="btn btn-primary btn-sm">Donate Now</a>
+                </div>
             </div>
 
-            <!-- Column 3: Donation Appeal & Copyright -->
-            <div class="footer-column footer-donation">
-                <h3>Make a Difference</h3>
-                <p class="donation-appeal">Your generous donation directly supports education, healthcare, and clean water initiatives in rural Pakistan. Every contribution, no matter the size, transforms lives and brings hope to underserved communities.</p>
-                <a href="#donate" class="btn btn-primary footer-donate-btn">Donate Now</a>
-                <div class="footer-copyright">
-                    <p>&copy; 2026 <strong>Karsazian Welfare Association</strong></p>
-                    <p>Powered by <a href="https://noorgeec.com" target="_blank" rel="noopener noreferrer">NoorGee Ltd</a></p>
+            <!-- Column 3: Contact & Copyright -->
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <div class="contact-info-footer">
+                    <p>📧 karsaziyanpak@gmail.com</p>
+                    <p>📧 info@kwa.com.pk</p>
+                    <p>📞 0331 2614215</p>
+                    <p>📍 B2, Fahim Manzil, Band Gali, Oatram Road, Pakistan Chowk, Karachi, Pakistan</p>
+                </div>
+                <div class="footer-copyright-box">
+                    <p>Site design & content copyright with <strong>NoorGee Ltd</strong></p>
+                    <p>&copy; 2026 Karsazian Welfare Association</p>
                 </div>
             </div>
         </div>
+        
+        <!-- Bottom Admin Links -->
+        <div class="footer-bottom-links">
+            <a href="deploy.php">deploy.php</a>
+            <a href="admin.php">admin.php</a>
+        </div>
     </footer>
+
+    <!-- MODALS -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Terms & Contradiction</h2>
+            <div class="modal-body">
+                <p>Welcome to the Karsazian Welfare Association (KWA) website. By accessing this site, you agree to follow our terms of service designed to protect our community and mission.</p>
+                <h3>1. Use of Content</h3>
+                <p>All content on this site is the property of KWA and NoorGee Ltd. Unauthorized use or reproduction is prohibited.</p>
+                <h3>2. Donation Policy</h3>
+                <p>Donations are used transparently for our welfare projects. KWA ensures 100% accountability for every contribution received.</p>
+                <h3>3. Visitor Conduct</h3>
+                <p>Visitors are expected to use the site for lawful purposes only and respect the dignity of the communities we serve.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="faqModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('faqModal')">&times;</span>
+            <h2>Frequently Asked Questions</h2>
+            <div class="modal-body">
+                <h3>How can I donate?</h3>
+                <p>You can donate via direct bank transfer to our Meezan Bank account listed in the "Donate" section.</p>
+                <h3>Where does my money go?</h3>
+                <p>Your donations directly fund our education, health, and clean water projects in rural Pakistan.</p>
+                <h3>Can I volunteer?</h3>
+                <p>Yes! Please use our contact form and select "Volunteer" as the category to get in touch with us.</p>
+                <h3>Is KWA registered?</h3>
+                <p>Yes, KWA is a registered non-profit organization with registration number DSW-4346-K.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

@@ -166,13 +166,44 @@ if (contactForm) {
 }
 
 // ============================================
+// MODAL CONTROLS
+// ============================================
+
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  }
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scroll
+  }
+}
+
+// Close modal when clicking outside of content
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+};
+
+// ============================================
 // SMOOTH SCROLLING FOR NAVIGATION
 // ============================================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({
         behavior: 'smooth',
