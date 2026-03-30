@@ -41,10 +41,38 @@
     </header>
 
     <main>
-        <!-- HERO SECTION (With Image) -->
+        <!-- HERO SECTION (With Image Carousel) -->
         <section id="home" class="hero">
-            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1920" alt="Rural Welfare" class="hero-bg-image">
-            <div class="hero-overlay"></div>
+            <div class="hero-carousel">
+                <div class="hero-slide active" style="background-image: url('images/hero-philanthropy.jpg')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-caption">
+                        <h3>Philanthropists & Volunteers United</h3>
+                        <p>Together, we make a difference in rural communities</p>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('images/hero-donation.jpg')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-caption">
+                        <h3>Your Donation Transforms Lives</h3>
+                        <p>Every contribution provides education and hope to children</p>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('images/hero-kwa-work-1.jpg')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-caption">
+                        <h3>Healthcare Clinics for Rural Communities</h3>
+                        <p>KWA's mobile health clinics serve underserved regions</p>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('images/hero-kwa-work-2.jpg')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-caption">
+                        <h3>Clean Water, Healthy Lives</h3>
+                        <p>KWA's clean water projects bring hope and dignity</p>
+                    </div>
+                </div>
+            </div>
             <div class="hero-content">
                 <h2>Empowering Lives in Rural Pakistan</h2>
                 <p>Education • Health • Clean Water</p>
@@ -52,6 +80,12 @@
                     <a href="#donate" class="btn btn-primary">Support Our Cause</a>
                     <a href="#activities" class="btn btn-secondary">View Our Work</a>
                 </div>
+            </div>
+            <div class="hero-carousel-controls">
+                <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+                <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+                <button class="carousel-dot" data-slide="3" aria-label="Slide 4"></button>
             </div>
         </section>
 
@@ -107,18 +141,82 @@
         <section id="impact" class="impact">
             <div class="container">
                 <h2>Our Impact</h2>
-                <div class="impact-cards">
-                    <div class="impact-card">
-                        <h3>500+</h3>
-                        <p>Families Supported</p>
+                <div class="impact-wrapper">
+                    <!-- Impact Statistics -->
+                    <div class="impact-stats">
+                        <div class="impact-card">
+                            <div class="impact-number">500+</div>
+                            <p>Families Supported</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">12</div>
+                            <p>Rural Projects</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">100%</div>
+                            <p>Donation Transparency</p>
+                        </div>
                     </div>
-                    <div class="impact-card">
-                        <h3>12</h3>
-                        <p>Rural Projects</p>
-                    </div>
-                    <div class="impact-card">
-                        <h3>100%</h3>
-                        <p>Donation Transparency</p>
+
+                    <!-- Testimonials Section -->
+                    <div class="testimonials-section">
+                        <h3>Stories of Change</h3>
+                        <div class="testimonials-grid">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"KWA's education program changed my life. I was able to complete my schooling and now I'm studying engineering."</p>
+                                    <div class="testimonial-author">
+                                        <strong>Fatima Ahmed</strong>
+                                        <span>Student, Sindh</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The mobile health clinic saved my mother's life. We didn't have access to healthcare until KWA came to our village."</p>
+                                    <div class="testimonial-author">
+                                        <strong>Muhammad Hassan</strong>
+                                        <span>Community Member, Punjab</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Clean water from KWA's project has improved our family's health dramatically. We are so grateful for their work."</p>
+                                    <div class="testimonial-author">
+                                        <strong>Ayesha Khan</strong>
+                                        <span>Mother of Three, KPK</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The workshops helped me become a better teacher. I can now provide quality education to my students."</p>
+                                    <div class="testimonial-author">
+                                        <strong>Mr. Abdul Rashid</strong>
+                                        <span>Teacher, Balochistan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"KWA's health awareness campaign taught us about hygiene and sanitation. Our community is healthier now."</p>
+                                    <div class="testimonial-author">
+                                        <strong>Zainab Malik</strong>
+                                        <span>Community Health Worker, Sindh</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The supplies donation program provided books and medical equipment to our school. Thank you KWA!"</p>
+                                    <div class="testimonial-author">
+                                        <strong>Dr. Saira Hussain</strong>
+                                        <span>School Principal, Punjab</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,20 +311,30 @@
 
     <!-- FOOTER (3 Columns) -->
     <footer class="footer">
-        <div class="container footer-grid">
-            <!-- Column 1 -->
-            <div class="footer-column">
-                <h2>Follow Us</h2>
+        <div class="footer-container">
+            <!-- Column 1: Social Media -->
+            <div class="footer-column footer-social">
+                <h3>Follow Us</h3>
+                <p class="social-intro">Connect with KWA on social media to stay updated on our latest initiatives.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/karsaziyan" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="http://x.com/karsaziyan92" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+                    <a href="https://www.facebook.com/karsaziyan" target="_blank" rel="noopener noreferrer" class="social-icon facebook" title="Facebook">
+                        <span class="icon-text">f</span>
+                        <span class="social-label">Facebook</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/karsaziyan-friends-002484348/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" title="LinkedIn">
+                        <span class="icon-text">in</span>
+                        <span class="social-label">LinkedIn</span>
+                    </a>
+                    <a href="http://x.com/karsaziyan92" target="_blank" rel="noopener noreferrer" class="social-icon twitter" title="Twitter/X">
+                        <span class="icon-text">X</span>
+                        <span class="social-label">Twitter</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Column 2 -->
-            <div class="footer-column">
-                <h2>General Links</h2>
+            <!-- Column 2: General Links -->
+            <div class="footer-column footer-links">
+                <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#activities">Activities</a></li>
@@ -237,11 +345,15 @@
                 </ul>
             </div>
 
-            <!-- Column 3 -->
-            <div class="footer-column">
-                <h2>Support Our Mission</h2>
-                <p>Your generous donation helps us serve 500+ families across 12 rural projects.</p>
-                <p class="footer-credit">&copy; 2026 Copyright to <a href="https://noorgeec.com" target="_blank" rel="noopener noreferrer">NoorGee</a></p>
+            <!-- Column 3: Donation Appeal & Copyright -->
+            <div class="footer-column footer-donation">
+                <h3>Make a Difference</h3>
+                <p class="donation-appeal">Your generous donation directly supports education, healthcare, and clean water initiatives in rural Pakistan. Every contribution, no matter the size, transforms lives and brings hope to underserved communities.</p>
+                <a href="#donate" class="btn btn-primary footer-donate-btn">Donate Now</a>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 <strong>Karsazian Welfare Association</strong></p>
+                    <p>Powered by <a href="https://noorgeec.com" target="_blank" rel="noopener noreferrer">NoorGee Ltd</a></p>
+                </div>
             </div>
         </div>
     </footer>
